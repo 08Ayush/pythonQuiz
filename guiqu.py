@@ -65,24 +65,6 @@ def Play_Game(amount : int,category : int)->float:
             print(f"Wrong ! you answered:{correct_choice_text}\n ")
     return score
 
-#call main function
-"""if __name__ == "__main__":
-    print("-------welcome to Quize-------")
-    option = input("Do you wish to play game :").lower()
-    if option == 'yes':
-        print("---------RULE---------")
-        print()
-        allcategories = ["1.General Knowledge","2.Books","3.Film","4.Music","5.Musicals & Theatres","6.Television","7.Video Game","8.Board Game","9.Science & Nature","10.Computers"]
-        for c in allcategories:
-            print(c)
-        categories = int(input("Enter Categories No for Quiz :"))
-        amount = 10
-        s = Play_Game(amount,categories+8)
-        print("Thank you for appearing QUIZ")
-        print("Your score is :",s,"out of 20")
-    else:
-        print("Ok come back soon ")
-"""
 if __name__ == "__main__":
     obj = play_quize()
     obj.mainloop()

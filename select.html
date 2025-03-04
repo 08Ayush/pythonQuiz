@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Category</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #DAF7A6, #FFC300);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header styling */
+        .header {
+            background-color: #FF5733;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Main container */
+        .container {
+            width: 60%;
+            margin: auto;
+            padding: 40px;
+            padding-top: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Title styling */
+        h1 {
+            font-size: 36px;
+            color: #FF5733;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* Select dropdown styling */
+        select {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            margin: 15px 0;
+            border: 2px solid #FFC300;
+            border-radius: 5px;
+            background-color: #FFF8E1;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Select dropdown focus effect */
+        select:focus {
+            background-color: #FFEB3B;
+            outline: none;
+            border-color: #FF5733;
+        }
+
+        /* Button styling */
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #FFC300;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        /* Button hover effect */
+        .button:hover {
+            background-color: #FF5733;
+            transform: scale(1.05);
+        }
+
+        /* Responsive styling for mobile */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .button {
+                font-size: 16px;
+            }
+
+            select {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Select a Category</h1>
+    </div>
+    <div class="container">
+        <form action="/category" method="POST">
+            <select name="category" required>
+                <option value="">Select Category</option>
+                {% for category in categories %}
+                    <option value="{{ category.id }}">{{ category.name }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <button class="button" type="submit">Start Game</button>
+        </form>
+    </div>
+</body>
+</html>
